@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Employee</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 class="text-center mb-4">Update Employee Information</h2>
+
+                <!-- Form -->
+                <form method="POST" class="border p-4 rounded shadow-sm bg-light">
+                    <div class="form-group mb-3">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" value="{{ employee.name }}" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="job">Job Position:</label>
+                        <input type="text" class="form-control" id="job" name="job" value="{{ employee.job_position }}" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="salary">Salary:</label>
+                        <input type="number" class="form-control" id="salary" name="salary" value="{{ employee.salary }}" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="department">Department:</label>
+                        <input type="text" class="form-control" id="department" name="department" value="{{ employee.department }}" required>
+                    </div>
+
+                    <div class="d-inline gap-2">
+                        <button type="submit" class="btn btn-primary">Update Employee</button>
+                        <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
